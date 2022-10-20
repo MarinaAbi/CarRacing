@@ -8,11 +8,13 @@ class Game {
     });
   }
 
+
   update(state) {
     database.ref('/').update({
       gameState: state
     });
   }
+
 
   start() {
     player = new Player();
@@ -34,11 +36,13 @@ class Game {
     //car2 = cars[1]
   }
 
+
   handleElements() {
     form.hide();
     form.titleImg.position(40, 50);
     form.titleImg.class('gameTitleAfterEffect');
   }
+
 
   play() {
     this.handleElements();
@@ -56,8 +60,17 @@ class Game {
 
         cars[index - 1].position.x = x;
         cars[index - 1].position.y = y;
+
+        if (index === player.index) {
+          stroke(10);
+          fill('red');
+          ellipse(x, y, 60, 60);
+          camera.position.x = cars[index - 1].position.x;
+          camera.position.y = cars[index - 1].position.y;
+        }
       }
 
+      
       this.handlePlayerControls();
 
       drawSprites();

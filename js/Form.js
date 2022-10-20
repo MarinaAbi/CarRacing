@@ -6,6 +6,7 @@ class Form {
     this.greeting = createElement('h2');
   }
 
+
   setElementsPosition() {
     this.input.position(width / 2 - 110, height / 2 - 80);
     this.playButton.position(width / 2 - 90, height / 2 - 20);
@@ -13,12 +14,14 @@ class Form {
     this.titleImg.position(120, 50);
   }
 
+
   setElementsStyle() {
     this.input.class('customInput');
     this.playButton.class('customButton');
     this.titleImg.class('gameTitle');
     this.greeting.class('greeting');
   }
+
 
   handleMousePressed() {
     this.playButton.mousePressed(() => {
@@ -34,12 +37,14 @@ class Form {
     });
   }
 
+
   display() {
     this.setElementsPosition();
     this.setElementsStyle();
     this.handleMousePressed();
   }
 
+  
   hide() {
     this.greeting.hide();
     this.playButton.hide();
